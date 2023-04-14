@@ -47,11 +47,11 @@ function App() {
     );
   }
 
+  /* demo 
   const handler = (e) => {
-    /* demo */
     e.preventDefault();
     console.log("handler clicked");
-  };
+  }; */
   return (
     <div className="App">
       <div>Hey</div>
