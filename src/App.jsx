@@ -1,3 +1,6 @@
+// https://www.npmjs.com/package/uuid - usage call:
+//uuidv4();
+import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 /* import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg"; */
@@ -25,6 +28,18 @@ function App() {
     },
   ]);
 
+  function addTask(taskname) {
+    // uuidv4();
+    console.log("taskname", taskname);
+    //we now need to add this task (an object to our stateArray of tasks)
+    const newTask = {
+      task: taskname,
+      completed: false,
+      id: uuidv4(),
+    };
+    setTasks((oldArrayOfTasks) => oldArrayOfTasks.concat(newTask));
+  }
+
   function completeTask(id) {
     console.log("btnClicked", id);
     setTasks((oldArrayOfTasks) =>
@@ -40,7 +55,8 @@ function App() {
   return (
     <div className="App">
       <div>Hey</div>
-      <Form clickHandler={handler} />
+      {/* <Form clickHandler={handler} /> */}
+      <Form addTask={addTask} /> {/* Now the form can pick it up from props*/}
       <List tasks={tasks} completeTask={completeTask} />
       {/* 1. pass tasks down to List, who needs to pick it up 2. later the same goes for completeTask */}
       <button>Demo-button console</button>
