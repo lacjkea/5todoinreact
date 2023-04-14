@@ -7,7 +7,7 @@ export default function List(props) {
       <ul>
         {props.tasks.map((task) => (
           //   console.log("task", task); virker ikke kig på Components i Dev tools
-          <ListItem {...task} />
+          <ListItem completeTask={props.completeTask} {...task} />
           /* look at ListItem - it now receives some variables*/
         ))}
       </ul>
