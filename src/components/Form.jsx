@@ -1,18 +1,20 @@
-// import { useState } from "react";
 import ListItem from "./ListItem";
 
-export default function Form() {
+export default function Form(props) {
   /*   const [listItems, setListItems] = useState([]);
   function addListItem(e) {
     // e.preventDefault();
     console.log(e.target.previousElementSibling.value);
   } */
+
+  function submit(e) {
+    e.preventDefault();
+    console.log(e.target);
+  }
   return (
-    <form action="#">
+    <form onSubmit={submit} action="#">
       <input type="text" />
-      <button type="submit" onClick={addListItem}>
-        Add
-      </button>
+      <button type="submit">Add</button>
     </form>
   );
 }
