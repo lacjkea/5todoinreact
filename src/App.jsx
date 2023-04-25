@@ -47,11 +47,11 @@ function App() {
     );
   }
 
-  /* demo 
+  // demo
   const handler = (e) => {
     e.preventDefault();
     console.log("handler clicked");
-  }; */
+  };
   return (
     <div className="App">
       <div>Hey</div>
@@ -59,7 +59,7 @@ function App() {
       <Form addTask={addTask} /> {/* Now the form can pick it up from props*/}
       <List tasks={tasks} completeTask={completeTask} />
       {/* 1. pass tasks down to List, who needs to pick it up 2. later the same goes for completeTask */}
-      <button>Demo-button console</button>
+      <button onClick={handler}>Demo-button console</button>
     </div>
   );
 }
